@@ -40,7 +40,7 @@ function App() {
             </p>
           </div>
           <div className="md:col-span-3 grid items-center justify-center">
-            <img src="lady.png" alt="lady" className="md:w-full w-3/4 overflow-hidden" style={{transform: `rotate(${rotation}deg)`}} />
+            <img src="lady.png" alt="lady" className="md:w-full m-auto w-3/4 overflow-hidden" style={{transform: `rotate(${rotation}deg)`}} />
           </div>
         </div>
       </div>
