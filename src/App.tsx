@@ -51,6 +51,7 @@ function App() {
             <p>I am a therapist hello yes. This is me. Am I doctor? Or counselor? I don't know. Haha! Hello!</p>
           </div>
       </div>
+      <div className="bg-[#fca8f5] w-full p-6 "><p className="prose">hello this is a footer</p></div>
     </>
   )
 }
