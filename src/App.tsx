@@ -31,7 +31,7 @@ function App() {
         </div>
       </div>
       <div className="grid items-center justify-center h-dvh">
-        <div className="fixed left-0 right-0 flex w-full justify-center items-center" style={{opacity: opacity, bottom: bottom}}>Scroll for more</div>
+        <div className="fixed left-0 right-0 md:flex w-full justify-center items-center hidden" style={{opacity: opacity, bottom: bottom}}>Scroll for more</div>
         <div className="z-30 md:grid w-full md:grid-cols-5 flex flex-col md:flex-col p-6">
           <div className="md:col-span-2 md:px-6 flex flex-col justify-center top-0 left-0 prose mb-8">
             <h1 className="text-5xl font-bold mb-3 oswald">Sarah Engle Counseling</h1>
