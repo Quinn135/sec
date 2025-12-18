@@ -11,7 +11,7 @@ function App() {
     const handleScroll = () => {
       setOpacity(Math.max(0, (275 - scrollY)/275));
       setBottom(24 + (scrollY) / 275 * 20);
-      setRotation(scrollY / window.innerHeight * 360);
+      setRotation(scrollY / window.innerHeight * 360* 2);
     };
 
     window.addEventListener("scroll", handleScroll);
