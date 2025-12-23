@@ -6,6 +6,8 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+import { FaArrowDown } from "react-icons/fa";
+
 import "./App.css";
 
 gsap.registerPlugin(useGSAP);
@@ -34,20 +36,37 @@ function App() {
     });
 
     // make noise noisy
-    gsap.to("#seed", {
+    gsap.to(".bg", {
       repeat: -1,
       repeatDelay: 0.25,
       duration: 0,
       ease: "none",
       onRepeat: () => {
         // randomly scoot
-        gsap.to("#seed", {
+        gsap.to(".bg", {
           x: Math.random() * 380 - 380 / 2,
           y: Math.random() * 380 - 380 / 2,
           duration: 0,
           ease: "none"
         });
+        console.log("f");
       }
+    });
+
+    var arrowTL = gsap.timeline({
+      repeat: -1,
+    });
+    arrowTL.set(".arrowAnimate", {
+      yPercent: -15,
+    })
+    arrowTL.to(".arrowAnimate", {
+      yPercent: 15,
+      duration: 0.25,
+    });
+    arrowTL.to(".arrowAnimate", {
+      yPercent: -15,
+      duration: 0.5,
+      ease: "power1.out"
     });
 
     let mm = gsap.matchMedia();
@@ -140,7 +159,10 @@ function App() {
     <>
       <div id="name" className="fixed w-full h-full grid grid-cols-2">
         <div className="col-span-1 flex items-center justify-center">
-          <h1 className="not-lg:hidden w-min text-5xl font-bold">Sarah Engle Counseling</h1>
+          <div>
+            <h1 className="not-lg:hidden w-min text-5xl font-bold">Sarah Engle Counseling</h1>
+            <p>at Sonder Counseling, Clayton, MO</p>
+          </div>
         </div>
       </div>
       <div className="bg">
@@ -178,7 +200,7 @@ function App() {
         </div>
       </div>
       <div className="not-lg:hidden fixed left-0 right-0 w-full flex justify-center bottom-3 scrollMore">
-        <span className="not-lg:hidden bg-[#fffdff5c] p-2 rounded backdrop-blur-sm backdrop-brightness-200">Scroll for more</span>
+        <span className="not-lg:hidden bg-[#fffdff5c] p-2 px-4 shadow rounded backdrop-blur-sm backdrop-brightness-125 flex flex-row gap-2 items-center">Scroll for more<FaArrowDown className="arrowAnimate" /></span>
       </div>
     </>
   )
