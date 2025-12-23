@@ -52,9 +52,17 @@ function App() {
 
     mm.add("(max-width: 1023px", () => {
       // set init
-      // gsap.set(".innerImage", {
-      // clearProps: "all",
-      // });
+      gsap.set(".innerImage", {
+        clearProps: "all",
+      });
+      gsap.set(".innerImage", {
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        width: "auto",
+        xPercent: -50,
+        yPercent: -50,
+      });
 
       var bgtl = gsap.timeline({
         scrollTrigger: {
@@ -76,46 +84,19 @@ function App() {
       }, 0);
 
       bgtl.to({}, { duration: 0 }, 1);
-
-      var htl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#nameMobile",
-          start: "top top",
-          endTrigger: "#text",
-          end: "bottom bottom",
-          scrub: true,
-          pin: "#nameMobile",
-          pinSpacing: false,
-        }
-      });
-
-      htl.set("#nameMobile", {
-        height: "auto",
-      });
-
-      htl.to("#nameMobile", {
-        // padding: "0.5rem",
-        boxShadow: "var(--shadow-md)",
-        fontSize: "1rem",
-        fontWeight: "normal",
-        textAlign: "left",
-        padding: "0.5rem",
-        duration: 0.1,
-      }, 0);
-      htl.to({}, { duration: 0 }, 1);
     });
 
     mm.add("(min-width: 1024px)", () => {
       gsap.set(".innerImage", {
-        // clearProps: "all", // Remove all GSAP inline styles first
-        // position: "absolute",
-        xPercent: 0,
-        yPercent: -50,
+        clearProps: "all", // Remove all GSAP inline styles first
+      });
+      gsap.set(".innerImage", {
+        position: "absolute",
         left: "50%",
         top: "50%",
-        scale: 0.95
+        xPercent: -50 + 50,
+        yPercent: -50,
       });
-      gsap.set("#name", { opacity: 1, display: "grid" });
 
       var tl = gsap.timeline({
         scrollTrigger: {
@@ -124,18 +105,12 @@ function App() {
           end: "bottom bottom",
           scrub: 0.4,
 
-          pin: ".image",
+          pin: ".innerImage",
           pinSpacing: false,
-
-          onEnter: () => {
-            gsap.set(".innerImage", { zIndex: 50 });
-          },
         }
       });
 
-      // tl.set(".innerImage", {
-      //   xPercent: 50,
-      // });
+      tl.set("#name", { opacity: 1, display: "grid" }, 0);
 
       tl.from("body", {
         background: "#fffee6",
@@ -157,13 +132,13 @@ function App() {
       }, 0.1)
       tl.to({}, { duration: 0 }, 1);
     });
-  }, { dependencies: [] });
+  });
 
   return (
     <>
-      <div id="name" className="not-lg:hidden fixed w-full h-full grid grid-cols-2">
+      <div id="name" className="fixed w-full h-full grid grid-cols-2">
         <div className="col-span-1 flex items-center justify-center">
-          <h1 className="w-min text-5xl font-bold">Sarah Engle Counseling</h1>
+          <h1 className="not-lg:hidden w-min text-5xl font-bold">Sarah Engle Counseling</h1>
         </div>
       </div>
       <div className="bg">
@@ -185,7 +160,7 @@ function App() {
       <div id="smooth-wrapper">
         <div className="flex flex-col" id="smooth-content">
           <div className="image h-dvh w-full pointer-events-none relative z-40">
-            <img src="/sarah.png" alt="Sarah Engle" className="innerImage not-lg:w-full customH not-lg:object-contain rounded h-full absolute pointer-events-auto" style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", aspectRatio: 618 / 870 }} />
+            <img id="img" src="/sarah.png" alt="Sarah Engle" className="innerImage customH lg:h-dvh rounded" />
             <h1 id="nameMobile" className="lg:hidden defaultBg absolute bottom-0 p-4 pb-6 w-full text-center text-4xl font-semibold">Sarah Engle Counseling</h1>
           </div>
           <div id="text" className="w-full flex flex-col items-center mt-8 p-8 lg:grid lg:grid-cols-2 relative z-0">
