@@ -40,8 +40,10 @@ function App() {
       duration: 0,
       ease: "none",
       onRepeat: () => {
+        // randomly scoot
         gsap.to("#seed", {
-          attr: { seed: Math.floor(Math.random() * 1000) },
+          x: Math.random() * 380 - 380 / 2,
+          y: Math.random() * 380 - 380 / 2,
           duration: 0,
           ease: "none"
         });
