@@ -147,7 +147,7 @@ function App() {
         duration: 0.2,
       }, 0.1);
       tl.to(".innerImage", {
-        xPercent: -50,
+        xPercent: -100,
         scale: 0.95,
         duration: 0.5,
       }, 0);
