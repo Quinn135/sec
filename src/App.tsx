@@ -1,5 +1,5 @@
 "use strict";
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
