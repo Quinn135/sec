@@ -108,7 +108,7 @@ function App() {
     mm.add("(min-width: 1024px)", () => {
       gsap.set(".innerImage", {
         // clearProps: "all", // Remove all GSAP inline styles first
-        xPercent: 50,
+        xPercent: 0,
         yPercent: -50,
         left: "50%",
         top: "50%",
@@ -133,7 +133,7 @@ function App() {
       });
 
       tl.set(".innerImage", {
-        // xPercent: 50,
+        xPercent: 50,
         scale: 0.95,
       });
 
