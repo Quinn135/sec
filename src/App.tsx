@@ -52,9 +52,9 @@ function App() {
 
     mm.add("(max-width: 1023px", () => {
       // set init
-      gsap.set(".innerImage", {
-        clearProps: "all",
-      });
+      // gsap.set(".innerImage", {
+      // clearProps: "all",
+      // });
 
       var bgtl = gsap.timeline({
         scrollTrigger: {
@@ -108,7 +108,8 @@ function App() {
     mm.add("(min-width: 1024px)", () => {
       gsap.set(".innerImage", {
         // clearProps: "all", // Remove all GSAP inline styles first
-        xPercent: 0,
+        // position: "absolute",
+        xPercent: 50,
         yPercent: -50,
         left: "50%",
         top: "50%",
@@ -132,10 +133,9 @@ function App() {
         }
       });
 
-      tl.set(".innerImage", {
-        xPercent: 50,
-        scale: 0.95,
-      });
+      // tl.set(".innerImage", {
+      //   xPercent: 50,
+      // });
 
       tl.from("body", {
         background: "#fffee6",
