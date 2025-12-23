@@ -109,7 +109,7 @@ function App() {
       gsap.set(".innerImage", {
         // clearProps: "all", // Remove all GSAP inline styles first
         // position: "absolute",
-        xPercent: 50,
+        xPercent: 0,
         yPercent: -50,
         left: "50%",
         top: "50%",
