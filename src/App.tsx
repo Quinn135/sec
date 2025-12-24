@@ -161,7 +161,7 @@ function App() {
         <div className="col-span-1 flex items-center justify-center">
           <div>
             <h1 className="not-lg:hidden w-min text-5xl font-bold">Sarah Engle Counseling</h1>
-            <p>at Sonder Counseling, Clayton, MO</p>
+            <p className="not-lg:hidden">at Sonder Counseling, Clayton, MO</p>
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ function App() {
       <div id="smooth-wrapper">
         <div className="flex flex-col" id="smooth-content">
           <div className="image h-dvh w-full pointer-events-none relative z-40">
-            <img id="img" src="/sarah.png" alt="Sarah Engle" className="innerImage customH lg:h-dvh rounded" />
+            <img id="img" src="/sarah.png" alt="Sarah Engle" className="innerImage customH lg:h-dvh rounded w-auto not-lg:object-cover" />
             <h1 id="nameMobile" className="lg:hidden defaultBg absolute bottom-0 p-4 pb-6 w-full text-center text-4xl font-semibold">Sarah Engle Counseling</h1>
           </div>
           <div id="text" className="w-full flex flex-col items-center mt-8 p-8 lg:grid lg:grid-cols-2 relative z-0">
